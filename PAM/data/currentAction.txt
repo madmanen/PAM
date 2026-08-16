@@ -1,0 +1,4 @@
+act=nil
+amount=2
+route=nil
+routeMov=20

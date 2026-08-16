@@ -1,0 +1,6 @@
+gpsMode=true
+gpsDestruFacingCheck=false
+movTries=1
+movAggro=true
+actContiueTries=1
+actContinueAggro=false
