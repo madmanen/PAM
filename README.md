@@ -48,6 +48,10 @@ Important: when using this API, you must not use any of the original movement re
     target: the number of the direction to face. 0=north, 1=east, 2=south, 3=west.  
 
 ## UTILITY
+* `PAM.init() -> nil`    
+    ensures all files exist and are formatted correctly. It also lets the user input the turtle's coordinates, mainly for setting up local mode.    
+    This function can be skipped after initial setup of the api, but it won't ruin anything if used afterwards.    
+
 * `PAM.checkActInterrupt() -> boolean, reason`  
     checks if the turtle experienced a force reboot or otherwise was interrupted mid execution of an action or route.
     If interrupted, it will pick up where it left off.
