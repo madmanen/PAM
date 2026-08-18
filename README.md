@@ -87,3 +87,44 @@ Important: when using this API, you must not use any of the original movement re
     startAt: a number (optional and mostly used by checkActInterrupt()) that defines what step of the route to start at.
 
 ## TURTLE API REPLACEMENTS
+* `PAM.down(steps, tries, aggressive) -> boolean, reason`    
+    replaces turtle.down().    
+    *Arguments:*    
+    steps: a number of times to move down.    
+    tries: the amount of times to try going down before failing    
+    aggressive: a boolean for if to attack when blocked or not.
+
+* `PAM.up(steps, tries, aggressive) -> boolean, reason`    
+    replaces turtle.up().    
+    *Arguments:*    
+    steps: a number of times to move up.    
+    tries: the amount of times to try going up before failing    
+    aggressive: a boolean for if to attack when blocked or not.
+
+* `PAM.turnLeft(times) -> boolean, reason`    
+    replaces turtle.turnLeft().    
+    *Arguments:*    
+    times: a number of times to turn left.
+
+* `PAM.turnRight(times) -> boolean, reason`    
+    replaces turtle.turnRight().    
+    *Arguments:*    
+    times: a number of times to turn right.
+
+* `PAM.back(steps, tries) -> boolean, reason`    
+    replaces turtle.back().    
+    *Arguments:*    
+    steps: a number of times to move back.    
+    tries: the amount of times to try going back before failing
+
+* `PAM.forward(steps, tries, aggressive) -> boolean, reason`    
+    replaces turtle.forward().    
+    *Arguments:*    
+    steps: a number of times to move forwards.    
+    tries: the amount of times to try going forward before failing    
+    aggressive: a boolean for if to attack when blocked or not.    
+
+* `PAM.refuel(amount) -> boolean, reason/amount refueled`    
+    replaces turtle.refule().    
+    *Arguments:*    
+    amount: the amount of items to consume.    
