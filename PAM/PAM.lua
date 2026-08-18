@@ -1,6 +1,6 @@
 --Welcome to the Pathfinding Action Manager PAM 
 local PAM = {};
-local dataVault = "api/PAM/data/";
+local dataVault = "PAM/data/";
 
 --optional initializing function to check that all files are there
 function PAM.init()
@@ -192,7 +192,7 @@ function PAM.getY()
 end
 
 --returns the z-coordinate of the turtle
-function getZ()
+function PAM.getZ()
     if readData("config.txt", "gpsMode") == true then
         local _, _, gpsZ = gps.locate(2, false);
         return gpsZ;
@@ -203,7 +203,7 @@ end
 
 --returns the compass facing of the turtle
 --direction is 0=north, 1=east, 2=south, 3=west
-function getFacing()
+function PAM.getFacing()
     if readData("config.txt", "gpsMode") == true then
         return gpsFacingCheck();
     else
@@ -212,7 +212,7 @@ function getFacing()
 end
 
 --sets the x-coordinate of the turtle
-function setX(x)
+function PAM.setX(x)
     if readData("config.txt", "gpsMode") == true then
         local gpsX, _, _ = gps.locate(2, false);
         writeData("pos.txt","x", gpsX);
@@ -224,7 +224,7 @@ function setX(x)
 end
 
 --sets the y-coordinate of the turtle
-function setY(y)
+function PAM.setY(y)
     if readData("config.txt", "gpsMode") == true then
         local _, gpsY, _ = gps.locate(2, false);
         writeData("pos.txt","y", gpsY);
@@ -236,7 +236,7 @@ function setY(y)
 end
 
 --sets the z-coordinate of the turtle
-function setZ(z)
+function PAM.setZ(z)
     if readData("config.txt", "gpsMode") == true then
         local _, _, gpsZ = gps.locate(2, false)
         writeData("pos.txt","z", gpsZ);
@@ -249,7 +249,7 @@ end
 
 --sets the compass facing of the turtle
 --direction is 0=north, 1=east, 2=south, 3=west
-function setFacing(f)
+function PAM.setFacing(f)
     local facing = readData("pos.txt", "f");
     writeData("pos.txt", "pf", facing);
     if readData("config.txt", "gpsMode") == true then
@@ -268,7 +268,7 @@ end
 
 --support function to find facing via gps
 --by moving and detecting what axis and direction it moved
-function gpsFacingCheck()
+local function gpsFacingCheck()
     local px, _, pz = gps.locate(2, false);
     local ok, reason;
     if readData("config.txt", "gpsDestruFacingCheck") then
@@ -299,7 +299,7 @@ end
 
 --refuels the turtle MUST be used for this api to work
 --accepts an amount of items to consume
-function refuel(amount)
+function PAM.refuel(amount)
     local nFuel = readData("pos.txt", "fuel");
     writeData("pos.txt", "pfuel", nFuel);
     local ok, reason = turtle.refuel(amount);
