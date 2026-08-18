@@ -1,8 +1,6 @@
 # PAM
 Pathfinding Action Manager, a pathfinding api for minecraft cc:tweaked. The api uses fuel level and action id storage to ensure reboot security, and can function in both gps and local mode.
 
-Currently, the PAM folder needs to be downloaded into a custom folder with the name "api", so that the full path to PAM.lua becomes api/PAM/PAM.lua
-
 
 ## REQUIREMENTS
 The api only works on turtles that use fuel. It has mainly been tested on minecraft 1.21.1 and cc:tweaked 1.120.0, but would be expected to work with older and younger versions as well.
